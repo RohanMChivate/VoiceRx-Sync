@@ -68,7 +68,10 @@ def verify_token(body: TokenRequest):
         "name":    firebase_user.get("displayName", "Doctor"),
         "picture": firebase_user.get("photoUrl", ""),
     }
-    save_doctor(doctor)
+    try:
+        save_doctor(doctor)
+    except Exception as e:
+        print(f"[Warning] Could not save doctor to MongoDB: {e}")
     return {"token": _create_jwt(doctor), "doctor": doctor}
 
 
