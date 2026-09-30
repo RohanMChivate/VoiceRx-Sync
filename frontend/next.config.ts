@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-let rawApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+let rawApiUrl = process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 if (rawApiUrl && !rawApiUrl.startsWith("http://") && !rawApiUrl.startsWith("https://")) {
   rawApiUrl = `https://${rawApiUrl}`;
 }
