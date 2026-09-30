@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+python-multipart
+python-jose[cryptography]
+cryptography
+
+python-dotenv
+groq
+pymongo[srv]
+certifi
+requests
+fpdf2
+pandas
+pydantic

@@ -1,0 +1,102 @@
+name,common_strengths_demo,max_single_dose_mg,max_daily_dose_mg,validation_available,notes
+Paracetamol,"500 mg, 650 mg, 1000 mg",1000,4000,1,Demo adult oral dose rule; verify clinically
+Dolo,"500 mg, 650 mg",1000,4000,1,Brand of paracetamol; demo adult oral dose rule
+Calpol,"120 mg/5 mL, 250 mg/5 mL, 500 mg, 650 mg",1000,4000,1,Paracetamol-based; pediatric products need extra caution
+Ibuprofen,"200 mg, 400 mg, 600 mg",400,1200,1,Demo adult oral OTC-style rule; verify clinically
+Cetirizine,"5 mg, 10 mg",10,10,1,Demo adult oral rule
+Pantoprazole,"20 mg, 40 mg",40,40,1,Demo adult oral rule
+Amoxicillin,"250 mg, 500 mg",500,0,1,Depends on infection; demo single-dose flag only
+Azithromycin,"250 mg, 500 mg",500,0,1,Depends on regimen; demo single-dose flag only
+Metformin,"500 mg, 850 mg, 1000 mg",1000,0,1,Depends on formulation and patient; demo single-dose flag only
+Amlodipine,"2.5 mg, 5 mg, 10 mg",10,10,1,Demo adult oral rule
+Aspirin,"75 mg, 81 mg, 150 mg, 300 mg, 325 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Diclofenac,"25 mg, 50 mg, 75 mg, 100 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Naproxen,"250 mg, 500 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Aceclofenac,"100 mg, 200 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Ketorolac,10 mg,0,0,0,Strength reference only; doctor/pharmacist review required
+Mefenamic Acid,"250 mg, 500 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Levocetirizine,5 mg,0,0,0,Strength reference only; doctor/pharmacist review required
+Loratadine,10 mg,0,0,0,Strength reference only; doctor/pharmacist review required
+Fexofenadine,"120 mg, 180 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Chlorpheniramine,"2 mg, 4 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Montelukast,"4 mg, 5 mg, 10 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Salbutamol,"2 mg, 4 mg, 100 mcg/puff",0,0,0,Strength reference only; doctor/pharmacist review required
+Budesonide,"100 mcg, 200 mcg, 400 mcg",0,0,0,Strength reference only; doctor/pharmacist review required
+Formoterol,"6 mcg, 12 mcg",0,0,0,Strength reference only; doctor/pharmacist review required
+Levosalbutamol,"0.31 mg, 0.63 mg, 1.25 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Amoxicillin Clavulanate,"375 mg, 625 mg, 1000 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Cefixime,"100 mg, 200 mg, 400 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Cefpodoxime,"100 mg, 200 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Cefuroxime,"250 mg, 500 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Ceftriaxone,"250 mg, 500 mg, 1 g",0,0,0,Strength reference only; doctor/pharmacist review required
+Ciprofloxacin,"250 mg, 500 mg, 750 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Levofloxacin,"250 mg, 500 mg, 750 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Doxycycline,100 mg,0,0,0,Strength reference only; doctor/pharmacist review required
+Metronidazole,"200 mg, 400 mg, 500 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Tinidazole,"300 mg, 500 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Fluconazole,"50 mg, 150 mg, 200 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Clotrimazole,"1% cream, 100 mg vaginal tablet, 500 mg vaginal tablet",0,0,0,Strength reference only; doctor/pharmacist review required
+Terbinafine,"250 mg, 1% cream",0,0,0,Strength reference only; doctor/pharmacist review required
+Acyclovir,"200 mg, 400 mg, 800 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Oseltamivir,"30 mg, 45 mg, 75 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Omeprazole,"10 mg, 20 mg, 40 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Esomeprazole,"20 mg, 40 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Rabeprazole,"10 mg, 20 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Ranitidine,"150 mg, 300 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Famotidine,"20 mg, 40 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Domperidone,10 mg,0,0,0,Strength reference only; doctor/pharmacist review required
+Ondansetron,"4 mg, 8 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Metoclopramide,"5 mg, 10 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Loperamide,2 mg,0,0,0,Strength reference only; doctor/pharmacist review required
+ORS,sachet,0,0,0,Strength reference only; doctor/pharmacist review required
+Lactulose,10 g/15 mL,0,0,0,Strength reference only; doctor/pharmacist review required
+Bisacodyl,"5 mg, 10 mg suppository",0,0,0,Strength reference only; doctor/pharmacist review required
+Glimepiride,"1 mg, 2 mg, 3 mg, 4 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Gliclazide,"40 mg, 80 mg, 30 mg MR, 60 mg MR",0,0,0,Strength reference only; doctor/pharmacist review required
+Sitagliptin,"25 mg, 50 mg, 100 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Dapagliflozin,"5 mg, 10 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Insulin,100 IU/mL,0,0,0,Strength reference only; doctor/pharmacist review required
+Telmisartan,"20 mg, 40 mg, 80 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Losartan,"25 mg, 50 mg, 100 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Enalapril,"2.5 mg, 5 mg, 10 mg, 20 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Atenolol,"25 mg, 50 mg, 100 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Metoprolol,"25 mg, 50 mg, 100 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Bisoprolol,"1.25 mg, 2.5 mg, 5 mg, 10 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Furosemide,"20 mg, 40 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Hydrochlorothiazide,"12.5 mg, 25 mg, 50 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Spironolactone,"25 mg, 50 mg, 100 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Atorvastatin,"10 mg, 20 mg, 40 mg, 80 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Rosuvastatin,"5 mg, 10 mg, 20 mg, 40 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Clopidogrel,"75 mg, 300 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Warfarin,"1 mg, 2 mg, 3 mg, 5 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Heparin,5000 IU/mL,0,0,0,Strength reference only; doctor/pharmacist review required
+Levothyroxine,"25 mcg, 50 mcg, 75 mcg, 100 mcg",0,0,0,Strength reference only; doctor/pharmacist review required
+Carbimazole,"5 mg, 10 mg, 20 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Prednisolone,"5 mg, 10 mg, 20 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Hydrocortisone,"10 mg, 20 mg, 100 mg injection",0,0,0,Strength reference only; doctor/pharmacist review required
+Dexamethasone,"0.5 mg, 4 mg, 8 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Betamethasone,"0.5 mg, 1 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Vitamin D3,"60000 IU sachet/capsule, 1000 IU, 2000 IU",0,0,0,Strength reference only; doctor/pharmacist review required
+Calcium Carbonate,"500 mg, 1000 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Folic Acid,"400 mcg, 5 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Ferrous Sulphate,200 mg,0,0,0,Strength reference only; doctor/pharmacist review required
+Vitamin B12,"500 mcg, 1000 mcg",0,0,0,Strength reference only; doctor/pharmacist review required
+Zinc,"20 mg, 50 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Multivitamin,tablet/capsule,0,0,0,Strength reference only; doctor/pharmacist review required
+Albendazole,"200 mg, 400 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Ivermectin,"3 mg, 6 mg, 12 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Permethrin,"5% cream, 1% lotion",0,0,0,Strength reference only; doctor/pharmacist review required
+Chlorhexidine,"0.2% mouthwash, 2% solution, 4% solution",0,0,0,Strength reference only; doctor/pharmacist review required
+Povidone Iodine,"5% solution, 10% solution",0,0,0,Strength reference only; doctor/pharmacist review required
+Mupirocin,2% ointment,0,0,0,Strength reference only; doctor/pharmacist review required
+Silver Sulfadiazine,1% cream,0,0,0,Strength reference only; doctor/pharmacist review required
+Lignocaine,"2% gel, 2% injection, 5% ointment",0,0,0,Strength reference only; doctor/pharmacist review required
+Diazepam,"2 mg, 5 mg, 10 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Alprazolam,"0.25 mg, 0.5 mg, 1 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Clonazepam,"0.25 mg, 0.5 mg, 1 mg, 2 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Sertraline,"25 mg, 50 mg, 100 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Escitalopram,"5 mg, 10 mg, 20 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Fluoxetine,"10 mg, 20 mg, 40 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Amitriptyline,"10 mg, 25 mg, 50 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Gabapentin,"100 mg, 300 mg, 400 mg",0,0,0,Strength reference only; doctor/pharmacist review required
+Pregabalin,"75 mg, 150 mg, 300 mg",0,0,0,Strength reference only; doctor/pharmacist review required

@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --accent: #6366f1;
+  --accent2: #8b5cf6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: #080d1a;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.35); border-radius: 4px; }
+
+/* Glass card */
+.glass {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated gradient border */
+@keyframes borderGlow {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}
+
+.glow-border { animation: borderGlow 3s infinite; }
+
+/* Fade-in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.5s ease forwards; }
+
+/* Pulse ring */
+@keyframes pulseRing {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.4); }
+  50%       { box-shadow: 0 0 0 16px rgba(99,102,241,0); }
+}
+.pulse-ring { animation: pulseRing 2.5s infinite; }

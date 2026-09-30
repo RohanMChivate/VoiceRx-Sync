@@ -1,0 +1,12 @@
+streamlit
+groq
+python-dotenv
+pandas
+fpdf2
+pydantic
+pymongo[srv]
+certifi
+google-auth-oauthlib
+google-auth
+requests
+plotly
