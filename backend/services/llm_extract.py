@@ -249,7 +249,7 @@ def extract_medical_json(transcript: str) -> dict:
         return dict(_EMPTY)
 
     client = get_groq_client()
-    model = os.getenv("GROQ_LLM_MODEL", "llama-3.1-8b-instant")
+    model = os.getenv("GROQ_LLM_MODEL", "openai/gpt-oss-20b")
 
     response = client.chat.completions.create(
         model=model,
