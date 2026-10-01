@@ -1,181 +1,199 @@
-# VoiceRx Sync
+# 🎙️ VoiceRx Sync
 
-**AI-powered voice-to-prescription clinical documentation assistant.**
+<div align="center">
 
-A doctor speaks a consultation note — patient ID, symptoms, diagnosis, and medicines — and VoiceRx Sync automatically transcribes, extracts, validates, and saves a structured digital prescription. Patient identifiers are encrypted end-to-end and never processed by the LLM.
+![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)
+![Next.js](https://img.shields.io/badge/Next.js%2015-black?style=for-the-badge&logo=next.js&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Groq](https://img.shields.io/badge/Groq%20Cloud-F05A28?style=for-the-badge)
+![MongoDB](https://img.shields.io/badge/MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase%20Auth-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+
+<p align="center">
+  <strong>AI-Powered Clinical Voice Prescription & EHR Synchronization Platform</strong>
+  <br />
+  Transforms clinical voice consultations into structured, validated medical prescriptions and compliant EHR records in real time.
+</p>
+
+[Live Web App](https://voicerx-sync.vercel.app) • [API Health](https://voicerx-sync.onrender.com/api/health) • [API Documentation](https://voicerx-sync.onrender.com/docs)
+
+</div>
 
 ---
 
-## Architecture
+## ⚡ Overview
+
+**VoiceRx Sync** automates medical documentation for healthcare practitioners. By recording doctor dictations and patient consultations directly in the browser, VoiceRx eliminates manual data entry, validates dosages and drug regimens, encrypts sensitive Patient Health Information (PHI), and compiles clinical-grade prescription PDFs ready for print or digital distribution.
+
+---
+
+## ✨ Key Features
+
+- 🎙️ **Direct Audio Capture**: Browser-native recording via the MediaRecorder API with zero client-side file truncation or timeout limits.
+- ⚡ **Ultra-Fast Clinical STT**: Real-time voice transcription powered by Groq-accelerated **Whisper Large v3**.
+- 🧠 **Structured Clinical Entity Extraction**: Converts unstructured speech into normalized JSON schemas (patient demographics, diagnosis, symptoms, structured medications, dosages, intervals, and durations) using high-speed reasoning models.
+- 🛡️ **Zero-Trust PHI Cryptography**: End-to-end field-level Fernet symmetric encryption on patient identifiable data before writing to MongoDB.
+- 📄 **Dynamic Prescription PDF Generation**: Direct-to-PDF compilation via ReportLab containing clinical disclaimers, doctor signatures, and digital verification.
+- 📊 **Synchronized EHR Records**: Searchable consultation history and analytics backed by MongoDB Atlas.
+
+---
+
+## 🏗️ Architecture
 
 ```
-frontend/          Next.js 14 (App Router) — doctor UI
-backend/           FastAPI — STT, LLM extraction, encryption, PDF, MongoDB
+┌─────────────────────────────────┐       ┌─────────────────────────────────┐
+│        Vercel (Frontend)        │       │         Render (Backend)        │
+│       Next.js 15 + React        │──────▶│         FastAPI + Python        │
+│   [https://voicerx-sync.vercel.app](https://voicerx-sync.vercel.app)│ CORS │ [https://voicerx-sync.onrender.com](https://voicerx-sync.onrender.com)│
+└────────────────┬────────────────┘       └────────┬───────────────┬────────┘
+                 │                                 │               │
+                 ▼                                 ▼               ▼
+      ┌─────────────────────┐             ┌──────────────────┐ ┌───────────────┐
+      │    Firebase Auth    │             │  MongoDB Atlas   │ │    Groq AI    │
+      │  (Google Sign-In)   │             │   (Database M0)  │ │ (Whisper+LLM) │
+      └─────────────────────┘             └──────────────────┘ └───────────────┘
 ```
 
-### Tech Stack
+---
 
-| Layer | Technology |
+## 🛠️ Tech Stack
+
+| Layer | Technologies |
 |---|---|
-| Frontend | Next.js 14, TypeScript, Tailwind CSS, Framer Motion |
-| Backend | FastAPI, Python 3.11+ |
-| AI / STT | Groq API (Whisper large-v3 + LLaMA 3) |
-| Database | MongoDB Atlas |
-| Auth | Firebase Google Sign-In + JWT |
-| Encryption | Fernet symmetric encryption (cryptography) |
-| PDF | fpdf2 |
+| **Frontend** | Next.js (App Router), React, Tailwind CSS, Lucide Icons, Firebase Auth SDK |
+| **Backend** | Python 3, FastAPI, Uvicorn, Pydantic v2, Cryptography (Fernet), ReportLab |
+| **AI / Machine Learning** | Groq Cloud API, `whisper-large-v3` (STT), `openai/gpt-oss-20b` (Entity Extraction) |
+| **Database** | MongoDB Atlas (Motor async driver / PyMongo) |
+| **Deployment & Hosting** | Vercel (Frontend Edge), Render (Containerized Backend Web Service) |
 
 ---
 
-## Features
-
-- **Voice recording** — doctor narrates consultation; STT via Whisper
-- **LLM extraction** — diagnosis, symptoms, multi-medicine prescriptions
-- **Patient ID encryption** — ID extracted from voice, encrypted with Fernet, LLM never sees it
-- **Medicine validation** — dose safety check against medications CSV
-- **Colorful PDF** — clinic letterhead, ℞ section, medicines table, signature
-- **Clinic profile** — set hospital name/address once in dashboard, used on every PDF
-- **FHIR output** — prescription exported as FHIR R4 bundle
-- **Analytics dashboard** — consultation timeline, top medicines, diagnosis distribution
-
----
-
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Python 3.11+
-- Node.js 18+
-- MongoDB Atlas cluster
-- Groq API key (free at [console.groq.com](https://console.groq.com))
-- Firebase project with Google Auth enabled
+- Node.js 18+ and npm
+- Python 3.10+
+- MongoDB Atlas Account & Database Cluster
+- Groq Cloud Account & API Key
+- Firebase Project with Google Sign-In enabled
 
-### 1. Backend
+---
+
+### 1. Clone the Repository
+
+```bash
+git clone [https://github.com/your-username/VoiceRx-Sync.git](https://github.com/your-username/VoiceRx-Sync.git)
+cd VoiceRx-Sync
+```
+
+---
+
+### 2. Backend Setup (FastAPI)
 
 ```bash
 cd backend
-python -m venv venv
-venv\Scripts\activate          # Windows
-# source venv/bin/activate     # Linux/Mac
 
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
 
-# Copy and fill in secrets
+# Create environment file
 cp .env.example .env
-
-python -m uvicorn main:app --reload --port 8000
 ```
 
-### 2. Frontend
+Configure `backend/.env`:
+
+```ini
+PORT=8000
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.abcde.mongodb.net/voicerx?appName=Cluster0
+MONGO_DB_NAME=voicerx
+GROQ_API_KEY=gsk_your_groq_api_key
+GROQ_LLM_MODEL=openai/gpt-oss-20b
+GROQ_STT_MODEL=whisper-large-v3
+JWT_SECRET=your_generated_32_byte_hex_secret
+PATIENT_ENCRYPT_KEY=your_generated_fernet_key
+FIREBASE_API_KEY=your_firebase_web_api_key
+```
+
+Generate cryptographic keys:
+```bash
+# Generate JWT_SECRET
+openssl rand -hex 32
+
+# Generate PATIENT_ENCRYPT_KEY
+python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+```
+
+Start the backend server:
 
 ```bash
-cd frontend
+uvicorn main:app --reload --port 8000
+```
+
+---
+
+### 3. Frontend Setup (Next.js)
+
+```bash
+cd ../frontend
+
+# Install dependencies
 npm install
 
-# Copy and fill in secrets
-cp .env.local.example .env.local
+# Create environment file
+cp .env.example .env.local
+```
 
+Configure `frontend/.env.local`:
+
+```ini
+NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSy...
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=1234567890
+NEXT_PUBLIC_FIREBASE_APP_ID=1:1234567890:web:abcdef
+```
+
+Start the frontend development server:
+
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Visit `http://localhost:3000` in your browser.
 
 ---
 
-## Environment Variables
+## 🔒 Security & Data Privacy
 
-### Backend (`backend/.env`)
+- **Field-Level Encryption**: All sensitive patient data (name, identification, contact) is encrypted using AES-128-CBC with SHA256 HMAC (Fernet specification) prior to insertion into MongoDB Atlas.
+- **In-Memory Audio Processing**: Voice streams are handled entirely in memory buffers without leaving lingering unencrypted temporary audio files on server storage.
+- **Strict Authentication**: Endpoints require verified Firebase Auth Bearer tokens or backend JWT headers.
 
-| Variable | Required | Description |
+---
+
+## 📖 API Reference
+
+When the backend is active, complete interactive documentation is available at:
+- **Swagger UI**: `/docs`
+- **ReDoc**: `/redoc`
+
+| Method | Endpoint | Description |
 |---|---|---|
-| `GROQ_API_KEY` | ✅ | Groq API key for STT + LLM |
-| `MONGO_URI` | ✅ | MongoDB Atlas connection string |
-| `MONGO_DB_NAME` | ✅ | MongoDB database name (default: `voicerx`) |
-| `FIREBASE_API_KEY` | ✅ | Firebase Web API key for token verification |
-| `JWT_SECRET` | ✅ | Long random string for JWT signing |
-| `PATIENT_ENCRYPT_KEY` | ⬜ | Optional Fernet key (derived from JWT_SECRET if absent) |
-
-### Frontend (`frontend/.env.local`)
-
-| Variable | Required | Description |
-|---|---|---|
-| `NEXT_PUBLIC_API_URL` | ✅ | Backend URL (default: `http://localhost:8000`) |
-| `NEXT_PUBLIC_FIREBASE_*` | ✅ | Firebase project config |
+| `GET` | `/api/health` | Backend and dependency health check |
+| `POST` | `/api/consultations/process-audio` | Transcribe audio stream and parse clinical JSON |
+| `POST` | `/api/consultations/save` | Encrypt & commit consultation to MongoDB Atlas |
+| `GET` | `/api/consultations/history` | Fetch authenticated doctor consultation records |
+| `GET` | `/api/consultations/{id}/pdf` | Generate and download prescription PDF |
 
 ---
 
-## How It Works
+## 📄 License
 
-### Recording Flow
-
-```
-Doctor speaks:  "Patient ID P1042, age 35, fever 3 days, 
-                 Paracetamol 500mg twice daily for 5 days..."
-        │
-        ▼  [WebM audio → FastAPI /process-audio]
-        
-1. Whisper STT  →  full transcript
-2. Regex scan   →  extract "P1042" from transcript
-3. Fernet.encrypt("P1042")  →  encrypted token (LLM never sees plain ID)
-4. LLM (LLaMA 3)  →  {age, diagnosis, symptoms, medicines[]}
-5. Inject encrypted token into result
-6. Medicine dose validation vs. medications.csv
-        │
-        ▼  [Review UI → /save]
-        
-7. Fetch clinic profile from MongoDB (hospital name, doctor quals, etc.)
-8. Generate PDF (decrypt patient ID only for printing)
-9. Build FHIR R4 bundle
-10. Save to MongoDB
-```
-
-### Security
-
-- Patient ID is **encrypted immediately** after STT, before the LLM call
-- The LLM processes only clinical text — no PII
-- Encrypted token stored in MongoDB; plain ID only appears in the generated PDF
-- JWT tokens expire after 72 hours
-
----
-
-## Project Structure
-
-```
-voicerx-sync/
-├── backend/
-│   ├── main.py                  FastAPI app entry point
-│   ├── requirements.txt
-│   ├── .env.example
-│   └── services/
-│       ├── stt.py               Whisper STT via Groq
-│       ├── llm_extract.py       LLaMA 3 medical JSON extraction
-│       ├── pid_extractor.py     Regex patient ID extraction from transcript
-│       ├── encryption.py        Fernet encrypt/decrypt
-│       ├── validator.py         Medicine dose safety validation
-│       ├── pdf_generator.py     Professional prescription PDF
-│       ├── fhir_builder.py      FHIR R4 bundle
-│       └── database.py          MongoDB operations
-│   └── routers/
-│       ├── auth.py              Firebase auth + clinic profile API
-│       ├── consultations.py     Audio processing + save pipeline
-│       └── analytics.py         Dashboard analytics
-│
-└── frontend/
-    ├── app/
-    │   ├── page.tsx             Landing / login
-    │   ├── dashboard/           Analytics dashboard + clinic profile
-    │   ├── consultation/new/    Voice recording + review flow
-    │   └── consultations/       Consultation list
-    ├── lib/
-    │   ├── api.ts               Axios API client
-    │   ├── auth.tsx             Firebase auth context
-    │   └── firebase.ts          Firebase init
-    └── components/
-        └── Sidebar.tsx
-```
-
----
-
-## License
-
-MIT
+This project is licensed under the [MIT License](LICENSE).
