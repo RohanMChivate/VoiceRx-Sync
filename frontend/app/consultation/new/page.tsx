@@ -188,7 +188,7 @@ export default function NewConsultationPage() {
             className="glass rounded-2xl p-12 flex flex-col items-center gap-4">
             <Loader2 size={40} className="text-indigo-400 animate-spin"/>
             <p className="text-slate-300 font-medium">AI is extracting prescription data…</p>
-            <p className="text-slate-600 text-sm">Groq Whisper + LLaMA 3.3 70B</p>
+            <p className="text-slate-600 text-sm">Groq Whisper + LLaMA</p>
           </motion.div>
         )}
 

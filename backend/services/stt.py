@@ -54,9 +54,10 @@ def transcribe_audio(audio_path: str) -> str:
     mime_type = mime_map.get(ext, "audio/webm")
     filename  = os.path.basename(audio_path)
 
+    model = os.getenv("GROQ_STT_MODEL", "whisper-large-v3")
     result = client.audio.transcriptions.create(
         file=(filename, audio_data, mime_type),
-        model="whisper-large-v3",
+        model=model,
         language="en",          # pin language — prevents mis-detection
         prompt=_WHISPER_PROMPT, # primes Whisper on medical vocab
         response_format="text", # simplest accurate format

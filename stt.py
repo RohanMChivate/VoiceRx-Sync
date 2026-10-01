@@ -57,11 +57,12 @@ def transcribe_audio(audio_path: str) -> str:
     Sends audio file to Groq Whisper and returns text.
     """
     client = get_groq_client()
+    model = os.getenv("GROQ_STT_MODEL", "whisper-large-v3")
 
     with open(audio_path, "rb") as file:
         transcription = client.audio.transcriptions.create(
             file=(audio_path, file.read()),
-            model="whisper-large-v3",
+            model=model,
             temperature=0,  
             response_format="verbose_json",
         )

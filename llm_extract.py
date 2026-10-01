@@ -87,9 +87,10 @@ def extract_medical_json(transcript: str) -> dict:
         }
 
     client = get_groq_client()
+    model = os.getenv("GROQ_LLM_MODEL", "llama-3.1-8b-instant")
 
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=model,
         messages=[
             {
                 "role": "system",
