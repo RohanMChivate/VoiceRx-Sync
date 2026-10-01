@@ -15,7 +15,7 @@
   Transforms clinical voice consultations into structured, validated medical prescriptions and compliant EHR records in real time.
 </p>
 
-[Live Web App](https://voicerx-sync.vercel.app) • [API Health](https://voicerx-sync.onrender.com/api/health) • [API Documentation](https://voicerx-sync.onrender.com/docs)
+[Live Web App](https://voice-rx-sync.vercel.app) • [API Health](https://voicerx-sync.onrender.com/api/health) • [API Documentation](https://voicerx-sync.onrender.com/docs)
 
 </div>
 
