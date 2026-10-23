@@ -194,6 +194,17 @@ When the backend is active, complete interactive documentation is available at:
 
 ---
 
+## 👥 Authors & Team — The Invariants
+
+- **Rohan Chivate**
+- **Prajwal Patil**
+- **Atharv Adake**
+
+---
+
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2026 The Invariants (Rohan Chivate, Prajwal Patil, Atharv Adake)
+

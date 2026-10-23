@@ -2,6 +2,13 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": "The Invariants",
+  "contributors": [
+    "Rohan Chivate",
+    "Prajwal Patil",
+    "Atharv Adake"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
